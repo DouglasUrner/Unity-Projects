@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -23,12 +23,14 @@ public class PlayerController : MonoBehaviour
         {
             verticalInput = Input.GetAxis("Vertical");
             horizontalInput = Input.GetAxis("Horizontal");
-        } else {
+        }
+        else
+        {
             // Ignore user inputs & disable turning if not playerControlled.
             verticalInput = 1;
             horizontalInput = 0;
         }
-        
+
         transform.Translate(Vector3.forward * verticalInput * speed * Time.deltaTime);
         transform.Rotate(Vector3.up, horizontalInput * turnRate * Time.deltaTime);
     }
